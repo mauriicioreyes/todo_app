@@ -8,11 +8,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-  welcome = 'Hola :)';
-  tasks = [
-    'Instalar Angular CLI',
-    'Comprobar versión de npm',
-    'Comprobar versión de Git',
-    'Probar Angular'
-  ]
+
 }

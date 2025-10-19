@@ -1,1 +1,8 @@
-<p>labs works!</p>
+<h1>Hola, este es mi primer proyecto en Angular :)</h1>
+<h2>{{ welcome }}</h2>
+
+<ul>
+  @for (task of tasks; track $index) {
+    <li>{{ task }}</li>
+  }
+</ul>
