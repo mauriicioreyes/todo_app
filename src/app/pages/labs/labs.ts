@@ -28,4 +28,8 @@ export class Labs {
   clickHandler() {
     alert('Hola :)');
   }
+
+  changeHandler(event: Event) {
+    console.log(event);
+  }
 }
