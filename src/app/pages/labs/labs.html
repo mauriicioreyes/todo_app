@@ -1,22 +1,24 @@
-<h1>Hola, este es mi primer proyecto en Angular :)</h1>
-<h2>{{ welcome }}</h2>
+<div class="container">
+    <h1>Hola, este es mi primer proyecto en Angular :)</h1>
+    <h2>{{ welcome }}</h2>
 
-<ul>
-  @for (task of tasks; track $index) {
-    <li>{{ task }}</li>
-  }
-</ul>
-<hr/>
-<h2>{{ 'Hola'.repeat(10) }}</h2>
-<p>la suma de 3 + 3 es {{ 3 + 3 }}</p>
-<p>Hola, soy {{ name }} y mi edad es {{ age }}</p>
+    <ul>
+    @for (task of tasks; track $index) {
+        <li>{{ task }}</li>
+    }
+    </ul>
+    <hr/>
+    <h2>{{ 'Hola'.repeat(10) }}</h2>
+    <p>la suma de 3 + 3 es {{ 3 + 3 }}</p>
+    <p>Hola, soy {{ name }} y mi edad es {{ age }}</p>
 
-<hr/>
-<img [src]="person.avatar" alt="">
-<input type="number" [value]="person.age">
-<button [disabled]="disabled">Click me</button>
+    <hr/>
+    <img [src]="person.avatar" alt="">
+    <input type="number" [value]="person.age">
+    <button [disabled]="disabled">Click me</button>
 
-<p>Persona: {{ person.name }}</p>
+    <p>Persona: {{ person.name }}</p>
 
-<hr/>
-<button (click)="clickHandler()">click me</button>
+    <hr/>
+    <button (click)="clickHandler()">click me</button>
+</div>
