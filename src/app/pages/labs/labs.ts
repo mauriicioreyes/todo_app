@@ -14,4 +14,6 @@ export class Labs {
     'Comprobar versión de Git',
     'Probar Angular'
   ];
+  name = 'Mauricio';
+  age = '15';
 }
