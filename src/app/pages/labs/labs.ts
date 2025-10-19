@@ -24,4 +24,8 @@ export class Labs {
     age: '22',
     avatar: 'https://www.w3schools.com/howto/img_avatar.png'
   }
+
+  clickHandler() {
+    alert('Hola :)');
+  }
 }
