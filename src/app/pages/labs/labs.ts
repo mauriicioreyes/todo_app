@@ -18,4 +18,10 @@ export class Labs {
   age = '15';
   disabled = true;
   img = 'https://www.w3schools.com/howto/img_avatar.png';
+
+  person = {
+    name: 'Mauricio',
+    age: '22',
+    avatar: 'https://www.w3schools.com/howto/img_avatar.png'
+  }
 }

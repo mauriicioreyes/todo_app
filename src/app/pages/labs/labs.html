@@ -12,6 +12,8 @@
 <p>Hola, soy {{ name }} y mi edad es {{ age }}</p>
 
 <hr/>
-<img [src]="img" alt="">
-<input type="text" [value]="name">
+<img [src]="person.avatar" alt="">
+<input type="number" [value]="person.age">
 <button [disabled]="disabled">Click me</button>
+
+<p>Persona: {{ person.name }}</p>
