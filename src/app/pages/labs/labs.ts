@@ -16,4 +16,6 @@ export class Labs {
   ];
   name = 'Mauricio';
   age = '15';
+  disabled = true;
+  img = 'https://www.w3schools.com/howto/img_avatar.png';
 }
