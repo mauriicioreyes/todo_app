@@ -2,9 +2,11 @@ import { Component, signal } from '@angular/core';
 
 import { Task } from './../../models/task.model';
 
+import { JsonPipe } from '@angular/common';
+
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [JsonPipe],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
@@ -40,5 +42,19 @@ export class Home {
 
   deleteTask(index: number) {
     this.tasks.update( (tasks) => tasks.filter( (task, position) => position !== index));
+  }
+
+  updateTask(index: number) {
+    this.tasks.update((tasks) => {
+      return tasks.map((task, position) => {
+        if (position === index) {
+          return {
+            ...task,
+            completed: !task.completed
+          }
+        }
+        return task;
+      })
+    });
   }
 }
