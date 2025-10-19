@@ -10,7 +10,7 @@
     <hr/>
     <h2>{{ 'Hola'.repeat(10) }}</h2>
     <p>la suma de 3 + 3 es {{ 3 + 3 }}</p>
-    <p>Hola, soy {{ name }} y mi edad es {{ age }}</p>
+    <p>Hola, soy {{ name() }} y mi edad es {{ age }}</p>
 
     <hr/>
     <img [src]="person.avatar" alt="">
@@ -31,5 +31,10 @@
     <input type="text" [value]="person.name" (keydown)="keydownHandler($event)">
     <p>(keydown por tecla)</p>
     <input type="text" [value]="person.name" (keydown.shift.c)="clickHandler()">
+
+    <hr/>
+    <h1>Signals</h1>
+    <input type="text" [value]="name()" (change)="changeHandler($event)">
+    <p>name: {{ name() }}</p>
 
 </div>

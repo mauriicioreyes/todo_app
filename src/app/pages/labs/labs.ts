@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { signal } from '@angular/core';
 
 @Component({
   selector: 'app-labs',
@@ -14,7 +15,7 @@ export class Labs {
     'Comprobar versión de Git',
     'Probar Angular'
   ];
-  name = 'Mauricio';
+  name = signal('Mauricio');
   age = '15';
   disabled = true;
   img = 'https://www.w3schools.com/howto/img_avatar.png';
@@ -30,7 +31,9 @@ export class Labs {
   }
 
   changeHandler(event: Event) {
-    console.log(event);
+    const input = event.target as HTMLInputElement;
+    const newValue = input.value;
+    this.name.set(newValue);
   }
 
   keydownHandler(event: KeyboardEvent) {
