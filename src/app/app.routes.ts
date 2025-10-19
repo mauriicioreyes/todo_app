@@ -4,7 +4,7 @@ import { Labs } from './pages/labs/labs';
 
 export const routes: Routes = [
     {
-        path: 'home',
+        path: '',
         component: Home
     },
     {
