@@ -9,12 +9,12 @@ import { signal } from '@angular/core';
 })
 export class Labs {
   welcome = 'Hola :)';
-  tasks = [
+  tasks = signal([
     'Instalar Angular CLI',
     'Comprobar versión de npm',
     'Comprobar versión de Git',
     'Probar Angular'
-  ];
+  ]);
   name = signal('Mauricio');
   age = '15';
   disabled = true;

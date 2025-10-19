@@ -3,7 +3,7 @@
     <h2>{{ welcome }}</h2>
 
     <ul>
-    @for (task of tasks; track $index) {
+    @for (task of tasks(); track $index) {
         <li>{{ task }}</li>
     }
     </ul>
@@ -33,6 +33,12 @@
     <input type="text" [value]="person.name" (keydown.shift.c)="clickHandler()">
 
     <hr/>
+    <p>Total de elementos: {{ tasks().length}}</p>
+    <ul>
+        @for (task of tasks(); track $index) {
+            <li>{{$index}} {{ task }}</li>
+        }
+    </ul>
     <h1>Signals</h1>
     <input type="text" [value]="name()" (change)="changeHandler($event)">
     <p>name: {{ name() }}</p>
