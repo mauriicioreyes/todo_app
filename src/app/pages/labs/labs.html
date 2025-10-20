@@ -69,4 +69,7 @@
         <p *ngSwitchDefault>No sé quién soy -_-</p>
     </div>
 
+    <hr />
+    <input type="color" [formControl]="colorCtrl">
+    <p>color: {{ colorCtrl.value }}</p>
 </div>

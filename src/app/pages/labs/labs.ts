@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-labs',
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './labs.html',
   styleUrl: './labs.css'
 })
@@ -25,6 +26,8 @@ export class Labs {
     age: 22,
     avatar: 'https://www.w3schools.com/howto/img_avatar.png'
   });
+
+  colorCtrl = new FormControl();
 
   clickHandler() {
     alert('Hola :)');
