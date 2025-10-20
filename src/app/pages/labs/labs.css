@@ -9,4 +9,9 @@
 .message-error {
     background-color: red;
     color: white;
+    opacity: 0;
+    transition: all linear .3s;
+}
+.message-error.show {
+    opacity: 1;
 }
