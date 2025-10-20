@@ -4,9 +4,11 @@ import { Task } from './../../models/task.model';
 
 import { JsonPipe } from '@angular/common';
 
+import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-home',
-  imports: [JsonPipe],
+  imports: [JsonPipe, CommonModule],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
