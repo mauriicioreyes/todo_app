@@ -1,14 +1,11 @@
 import { Component, signal } from '@angular/core';
-
 import { Task } from './../../models/task.model';
-
-import { JsonPipe } from '@angular/common';
-
-import { CommonModule } from '@angular/common';
+import { JsonPipe, CommonModule } from '@angular/common';
+import { ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
-  imports: [JsonPipe, CommonModule],
+  imports: [JsonPipe, CommonModule, ReactiveFormsModule],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
@@ -26,11 +23,27 @@ export class Home {
     }
   ]);
 
-  changeHandler(event: Event) {
-    const input = event.target as HTMLInputElement;
-    const newTask = input.value;
-    this.addTask(newTask);
-    input.value ='';
+  // Controlador para nuevas tareas
+  newTaskCtrl = new FormControl('', {
+    nonNullable: true,
+    validators: [
+      Validators.required
+    ]
+  });
+
+  // changeHandler(event: Event) {
+  //   const input = event.target as HTMLInputElement;
+  //   const newTask = input.value;
+  //   this.addTask(newTask);
+  //   input.value ='';
+  // }
+
+  changeHandler() {
+    if (this.newTaskCtrl.valid) {
+      const value = this.newTaskCtrl.value;
+      this.addTask(value);
+      this.newTaskCtrl.setValue('');
+    }
   }
   
   addTask(title: string) {
