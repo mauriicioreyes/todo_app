@@ -1,8 +1,9 @@
 import { Component, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-labs',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './labs.html',
   styleUrl: './labs.css'
 })

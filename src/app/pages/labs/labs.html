@@ -43,4 +43,12 @@
     <input type="text" [value]="name()" (change)="changeHandler($event)">
     <p>name: {{ name() }}</p>
 
+    <hr/>
+    <div *ngIf="1 == 1">
+        Mi contenido
+    </div>
+    <div *ngIf="name() === 'Mauricio'">
+        Soy Mauricio
+    </div>
+
 </div>
