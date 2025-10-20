@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormControl } from '@angular/forms';
+import { ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-labs',
@@ -28,10 +28,20 @@ export class Labs {
   });
 
   colorCtrl = new FormControl();
+  
   widthCtrl = new FormControl(50, {
     nonNullable: true
   });
 
+  nameCtrl = new FormControl(1, {
+    nonNullable: true,
+    validators: [
+      Validators.required,
+      Validators.minLength(3)
+    ]
+  }
+
+  );
   // Leer el valor del formulario reactivo desde la lógica.
   constructor() {
     this.colorCtrl.valueChanges.subscribe(value => {
