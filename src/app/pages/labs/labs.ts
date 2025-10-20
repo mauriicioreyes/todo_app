@@ -29,6 +29,13 @@ export class Labs {
 
   colorCtrl = new FormControl();
 
+  // Leer el valor del formulario reactivo desde la lógica.
+  constructor() {
+    this.colorCtrl.valueChanges.subscribe(value => {
+      console.log(value);
+    })
+  }
+
   clickHandler() {
     alert('Hola :)');
   }
