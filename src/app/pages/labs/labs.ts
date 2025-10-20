@@ -16,15 +16,15 @@ export class Labs {
     'Probar Angular'
   ]);
   name = signal('Mauricio');
-  age = '15';
+  age = 15;
   disabled = true;
   img = 'https://www.w3schools.com/howto/img_avatar.png';
 
-  person = {
+  person = signal({
     name: 'Mauricio',
-    age: '22',
+    age: 22,
     avatar: 'https://www.w3schools.com/howto/img_avatar.png'
-  }
+  });
 
   clickHandler() {
     alert('Hola :)');
