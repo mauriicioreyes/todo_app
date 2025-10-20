@@ -13,24 +13,24 @@
     <p>Hola, soy {{ name() }} y mi edad es {{ age }}</p>
 
     <hr/>
-    <img [src]="person.avatar" alt="">
-    <input type="number" [value]="person.age">
+    <img [src]="person().avatar" alt="">
+    <input type="number" [value]="person().age">
     <button [disabled]="disabled">Click me</button>
 
-    <p>Persona: {{ person.name }}</p>
+    <p>Persona: {{ person().name }}</p>
 
     <hr/>
     <button (click)="clickHandler()">click me</button>
     <p></p>
     <button (dblclick)="clickHandler()">double me</button>
     <p>(change)</p>
-    <input type="number" [value]="person.age" (change)="changeHandler($event)">
+    <input type="number" [value]="person().age" (change)="changeHandler($event)">
     <p>(change con input text)</p>
-    <input type="text" [value]="person.name" (change)="changeHandler($event)">
+    <input type="text" [value]="person().name" (change)="changeHandler($event)">
     <p>(keydown)</p>
-    <input type="text" [value]="person.name" (keydown)="keydownHandler($event)">
-    <p>(keydown por tecla)</p>
-    <input type="text" [value]="person.name" (keydown.shift.c)="clickHandler()">
+    <input type="text" [value]="person().name" (keydown)="keydownHandler($event)">
+    <p>(keydown por tecla) (Genera atajos de teclado)</p>
+    <input type="text" [value]="person().name" (keydown.shift.c)="clickHandler()">
 
     <hr/>
     <p>Total de elementos: {{ tasks().length}}</p>
@@ -49,6 +49,9 @@
     </div>
     <div *ngIf="name() === 'Mauricio'">
         Soy Mauricio
+    </div>
+    <div *ngIf="person().name === 'Mauricio' && person().age > 10">
+        Soy Mauricio, y soy mayor de edad.
     </div>
 
 </div>
