@@ -50,7 +50,10 @@
     <div *ngIf="name() === 'Mauricio'">
         Soy Mauricio
     </div>
-    <div *ngIf="person().name === 'Mauricio' && person().age > 10; else bloqueElse">
+    <div>
+        <input type="number" [value]="person().age" (change)="changeAge($event)">
+    </div>
+    <div *ngIf="person().name === 'Mauricio' && person().age >= 18; else bloqueElse">
         Soy Mauricio, y soy mayor de edad.
     </div>
     <ng-template #bloqueElse>

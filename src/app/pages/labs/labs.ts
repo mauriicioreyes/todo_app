@@ -40,4 +40,16 @@ export class Labs {
     const input = event.target as HTMLInputElement;
     console.log(input.value);
   }
+
+  changeAge(event: Event) {
+    // console.log(event);
+    const input = event.target as HTMLInputElement;
+    const newValue = input.value;
+    this.person.update(prevState => {
+      return {
+        ...prevState,
+        age: parseInt(newValue, 10)
+      }
+    })
+  }
 }
