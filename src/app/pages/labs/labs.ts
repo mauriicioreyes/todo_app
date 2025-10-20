@@ -28,6 +28,9 @@ export class Labs {
   });
 
   colorCtrl = new FormControl();
+  widthCtrl = new FormControl(50, {
+    nonNullable: true
+  });
 
   // Leer el valor del formulario reactivo desde la lógica.
   constructor() {
